@@ -1,7 +1,11 @@
 <div id="main-numbers-block">
   <div id="numbers-block-list">
+    <app-numbers-item
+      *ngFor="let numberItem of arrayNumbers"
+      [number]= numberItem
+    ></app-numbers-item>
   </div>
-  <button id="btn-new-numbers" role="button">new numbers</button>
+  <button id="btn-new-numbers" role="button" (click)="generateNewArrayNumbers()">new numbers</button>
 </div>
 
 

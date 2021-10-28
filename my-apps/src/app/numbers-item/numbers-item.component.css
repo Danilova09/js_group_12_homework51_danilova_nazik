@@ -1,0 +1,12 @@
+.number-item {
+  width: 80px;
+  height: 80px;
+  line-height: 75px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-weight: bold;
+  text-align: center;
+  line-height: 80px;
+  margin: 15px;
+  background-color: rgb(51, 121, 252);box-shadow: rgba(136, 165, 191, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+}
