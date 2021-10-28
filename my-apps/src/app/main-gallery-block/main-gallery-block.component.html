@@ -1,24 +1,36 @@
 <div class="main-gallery-block">
   <h1 class="logo"><a href="">MyGallery</a><i class="fas fa-images"></i></h1>
-  <div class="open-form-block">
+  <div class="open-form-block" (submit)="onSubmitPassword($event)">
     <form id="open-form">
       <div class="input-group mb-3 ">
         <input type="text" id="userInputPassword" class="form-control" placeholder="Password"
-               aria-label="Username" aria-describedby="basic-addon1">
+               aria-label="Username" aria-describedby="basic-addon1" [value]="userPassword"
+               (input)="checkingUserPassword($event)">
       </div>
-      <button type="submit" class="btn btn-primary px-3">enter</button>
+      <button type="submit" class="btn btn-primary px-3" [disabled]="passwordFormIsEmpty()">enter</button>
     </form>
   </div>
 
-  <div class="add-img-block">
+  <div class="add-img-block" *ngIf="showForm" (submit)="onSubmitImg($event)">
     <form id="send-form">
       <div class="input-group mb-3">
-        <input type="text" id="userInputImgTitle" class="form-control" placeholder="title" required>
+        <input type="text" id="userInputImgTitle" class="form-control" placeholder="title" [value]="userImgTitle"
+               (input)="checkingUserImgTitle($event)" required>
       </div>
       <div class="input-group mb-3">
-        <input type="text" id="userInputImgUrl" class="form-control" placeholder="img_url" required>
+        <input type="text" id="userInputImgUrl" class="form-control" placeholder="img_url" [value]="userImgUrl"
+               (input)="checkingUserImgUrl($event)" required>
       </div>
-      <button type="submit" class="btn btn-primary px-3">add</button>
+      <button type="submit" class="btn btn-primary px-3" [disabled]="imgFormIsEmpty()">add</button>
     </form>
   </div>
 </div>
+
+<div id="cards-block">
+</div>
+
+
+
+
+
+
